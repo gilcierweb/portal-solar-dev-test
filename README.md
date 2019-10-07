@@ -90,3 +90,16 @@ vez que o usuário realizar uma buscar.
 
 * Organização e estrutura dos códigos implementados.
 
+### Bug  gem 'rails-assets-jquery'
+
+Fetching gem metadata from https://rubygems.org/.
+Could not find gem 'rails-assets-jquery' in any of the gem sources listed in your Gemfile.
+
+Soluction in Gemfile replace
+```shell
+gem 'rails-assets-jquery'
+# to
+source 'https://rails-assets.org' do
+  gem 'rails-assets-jquery'
+end
+```
