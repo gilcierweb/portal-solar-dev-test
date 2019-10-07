@@ -1,5 +1,5 @@
 # Import list the Power Generators
-
+puts 'PowerGenerator create'
 PowerGenerator.create!(
   name: 'TRIFÁSICO 380V', 
   description: '2 MPPTs para adaptação versátil a diferentes tipos ou quantidades de módulos construídos com diferentes alinhamentos    
@@ -342,3 +342,5 @@ xls_file = Roo::Spreadsheet.open(File.join('db', 'loader', 'freight_data.xlsx'))
   cost = xls_file.cell(line, 'D')
   Freight.create!(state: state, weight_min: weight_min, weight_max: weight_max, cost: cost)
 end
+
+puts 'Final seeds'

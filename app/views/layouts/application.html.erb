@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>Portal Solar - Dev Test</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portal Solar - Dev Test - GilcierWeb</title>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'favicon.png' %>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+
   </head>
   <body>
-    <%= yield %>
+
+    <div class="container-fluid">
+      <%= render partial: 'layouts/partials/header' %>
+    </div>
+
+    <%= render partial: 'layouts/partials/header_form' %>
+
+    <div class="container-fluid">
+
+      <%= yield %>
+
+    </div>
+
+    <%= render partial: 'layouts/partials/footer' %>
+
+    <!--  scripts-->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <%= javascript_pack_tag 'application' %>
+
   </body>
 </html>
