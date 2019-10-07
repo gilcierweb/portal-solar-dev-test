@@ -1,34 +1,39 @@
 <div class="searcher gradient mt-4">
 
-  <div class="row">
+  <div class="container-fluid">
+    <div class="row">
 
-    <div class="col">
-      <div class="searcher__radio">
+      <div class="col">
+        <div class="searcher__radio">
 
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
-          <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
+            <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
+            <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
+          </div>
+
         </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
-          <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
-        </div>
-
       </div>
+
+      <div class="col-lg-6 col-md-6 ">
+
+        <%= form_tag('', {class: 'form-inline my-2 my-lg-0'}) do %>
+          <div class="form-group mx-sm-3 mb-2">
+            <input class="form-control form-control-lg mr-sm-2" type="search" placeholder="o que procura?" aria-label="Search">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <button class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Pesquisar</button>
+          </div>
+          <div class="advanced-form" style="display:none;">
+            Entradas do usuário para pesquisar uma coleção de geradores de energia com base nas recomendações fornecidas e melhor custo de frete.
+          </div>
+        <% end %>
+      </div>
+
     </div>
-
-    <div class="col">
-      <%= form_tag('', {class: 'form-inline my-2 my-lg-0'}) do %>
-
-        <input class="form-control form-control-lg mr-sm-2" type="search" placeholder="o que procura?" aria-label="Search">
-        <button class="btn btn-outline-primary btn-lg my-2 my-sm-0" type="submit">Pesquisar</button>
-
-        <div class="advanced-form" style="display:none;">
-          Entradas do usuário para pesquisar uma coleção de geradores de energia com base nas recomendações fornecidas e melhor custo de frete.
-        </div>
-      <% end %>
-    </div>
-
   </div>
 </div>
