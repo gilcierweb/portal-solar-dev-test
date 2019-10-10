@@ -1,28 +1,35 @@
-<div class="row mt-4 mb-4">
-  <% @power_generators.each do |power_generator| %>
+<div id="app">
+  <div class="row mt-4 mb-4">
+    <% @power_generators.each do |power_generator| %>
 
-    <div class="col-lg-6 col-md-6">
-      <div class="card mb-3">
-        <div class="row no-gutters">
-          <div class="col-lg-4 col-md-4">
-            <%= image_tag power_generator.image_url, class: 'card-img' %>
-          </div>
-          <div class="col-lg-8 col-md-8">
-            <div class="card-body">
-              <h2 class="card-title"><%= power_generator.name.upcase %></h2>
-              <p class="card-text power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
-              <p class="card-text"><strong>Descrição: </strong><%= power_generator.description %></p>
+      <div class="col-lg-6 col-md-6">
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-lg-4 col-md-4">
+              <%= image_tag power_generator.image_url, class: 'card-img' %>
+            </div>
+            <div class="col-lg-8 col-md-8">
+              <div class="card-body">
+                <h2 class="card-title"><%= power_generator.name.upcase %></h2>
+                <p class="card-text power_generator-card__price"><%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
+                <p class="card-text"><strong>Descrição: </strong><%= power_generator.description %></p>
+                <p class="card-text">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" @click.prevent="set_product($event, <%= power_generator.id %>)">Calcular CEP</button>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-  <% end %>
-</div>
-
-<div class="row">
-  <div class="col-lg-12 col-md-12">
-    <%= paginate @power_generators %>
+    <% end %>
   </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <%= paginate @power_generators %>
+    </div>
+  </div>
+
+  <%= render partial: 'modal_cep' %>
 </div>

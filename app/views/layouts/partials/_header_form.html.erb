@@ -44,6 +44,7 @@
             <div class="col">
               <div class="form-group">
                 <button class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Pesquisar</button>
+                <button class="btn btn-default btn-lg my-2 my-sm-0" type="submit">Limpar</button>
               </div>
             </div>
           </div>
@@ -60,25 +61,25 @@
 
               <div class="col">
                 <div class="form-group">
-                  <%= form.search_field :structure_type_cont, placeholder: 'Tipo de estrutura', class: 'form-control form-control-lg' %>
+                  <%= form.select(:structure_type_eq, enum_options_for_select(PowerGenerator, :structure_type), {:prompt => t('form.select')}, {:class => 'form-control form-control-lg selectpicker', data: {'live-search': true}, 'v-model': 'survey.status'}) %>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <%= form.search_field :height_cont, placeholder: 'Altura', class: 'form-control form-control-lg' %>
+                  <%= form.search_field :height_gt, placeholder: 'Altura', class: 'form-control form-control-lg' %>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <%= form.search_field :width_cont, placeholder: 'Largura', class: 'form-control form-control-lg' %>
+                  <%= form.search_field :width_gt, placeholder: 'Largura', class: 'form-control form-control-lg' %>
                 </div>
               </div>
 
               <div class="col">
                 <div class="form-group">
-                  <%= form.search_field :kwp_cont, placeholder: 'KWP', class: 'form-control form-control-lg' %>
+                  <%= form.search_field :kwp_gt, placeholder: 'KWP', class: 'form-control form-control-lg' %>
                 </div>
               </div>
 

@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+    errors:
+      models:
+
+    attributes:
+
+      power_generator:
+        structure_types:
+          metalico: 'Metálico'
+          ceramico: 'Cerâmico'
+          fibrocimento: 'Fibrocimento'
+          laje: 'Laje'
+          solo: 'Solo'
+          trapezoidal: 'Trapezoidal'

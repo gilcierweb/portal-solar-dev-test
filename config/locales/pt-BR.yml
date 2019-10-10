@@ -1,2 +1,11 @@
 pt-BR:
   project: 'Portal Solar'
+  form:
+    error: "%{count} erros impediram a gravação de %{resource}:"
+    submit: 'Salvar'
+    submit_save_publish: 'Salvar e Publicar'
+    remove: 'Remover'
+    select: 'Selecione'
+    select_all: 'Todos'
+    search: 'Buscar'
+    reset: 'Limpar'
