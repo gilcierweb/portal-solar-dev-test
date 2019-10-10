@@ -6,12 +6,12 @@
       <div class="col">
         <div class="searcher__radio">
 
-          <div class="form-check">
+          <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
             <label class="form-check-label" for="simpleSearch">Pesquisa simples</label>
           </div>
 
-          <div class="form-check">
+          <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
             <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
           </div>
@@ -19,18 +19,73 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 ">
+      <div class="col-lg-8 col-md-8 ">
 
-        <%= form_tag('', {class: 'form-inline my-2 my-lg-0'}) do %>
-          <div class="form-group mx-sm-3 mb-2">
-            <input class="form-control form-control-lg mr-sm-2" type="search" placeholder="o que procura?" aria-label="Search">
+        <%= search_form_for(@search, url: root_path, html: {class: ' my-2 my-lg-0'}) do |form| %>
+          <div class="form-row mt-4">
+            <div class="col">
+              <div class="form-group">
+                <%= form.search_field :price_gteq, placeholder: 'Preço mínimo', class: 'form-control form-control-lg ' %>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <%= form.search_field :price_lteq, placeholder: 'Preço máximo', class: 'form-control form-control-lg' %>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <%= form.search_field :name_cont, placeholder: 'O que procura?', class: 'form-control form-control-lg mb-4' %>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <button class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Pesquisar</button>
+              </div>
+            </div>
           </div>
-          <div class="form-group mx-sm-3 mb-2">
-            <button class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Pesquisar</button>
-          </div>
+
           <div class="advanced-form" style="display:none;">
-            Entradas do usuário para pesquisar uma coleção de geradores de energia com base nas recomendações fornecidas e melhor custo de frete.
+
+            <div class="form-row mt-4">
+
+              <div class="col">
+                <div class="form-group">
+                  <%= form.search_field :manufacturer_cont, placeholder: 'Fabricante', class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <%= form.search_field :structure_type_cont, placeholder: 'Tipo de estrutura', class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <%= form.search_field :height_cont, placeholder: 'Altura', class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <%= form.search_field :width_cont, placeholder: 'Largura', class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <%= form.search_field :kwp_cont, placeholder: 'KWP', class: 'form-control form-control-lg' %>
+                </div>
+              </div>
+
+            </div>
+
           </div>
+
         <% end %>
       </div>
 

@@ -8,7 +8,7 @@ function ready(event) {
       $('.simple-form').hide();
       $('.advanced-form').show();
     }
-  });
+  }).trigger('change');
 }
 
 $(document).on('turbolinks:load', ready);
